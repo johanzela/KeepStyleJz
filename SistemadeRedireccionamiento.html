@@ -4,333 +4,282 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Keep Style For Men, tienda virtual de ropa masculina. Conoce nuestras redes sociales y descubre tu próximo estilo.">
+  <title>Keep Style For Men | Tienda Virtual</title>
 
-  <title>Keep Style | Moda Masculina</title>
-  <meta name="description" content="Keep Style, tienda virtual de ropa masculina. Descubre nuestros estilos, novedades y redes sociales.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #080808;
-      --gold: #e9be68;
+      --black: #0a0a0a;
+      --card: #151515;
+      --gold: #d9b778;
       --white: #ffffff;
+      --muted: #a6a6a6;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
       min-height: 100vh;
-      background: var(--bg);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
-      overflow-x: hidden;
+      background: var(--black);
+      color: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* CONTENEDOR PRINCIPAL */
+    header {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #252525;
+      background: #0d0d0d;
+    }
+
+    header h1 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
 
     main {
       flex: 1;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 18px 14px 30px;
-      background:
-        radial-gradient(circle at 50% 30%,
-          rgba(218, 168, 76, .11),
-          transparent 60%),
-        #080808;
+      justify-content: center;
+      padding: 36px 20px;
     }
 
-    .showcase {
-      position: relative;
+    .container {
       width: 100%;
-      max-width: 850px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 24px;
-      box-shadow:
-        0 24px 70px rgba(0, 0, 0, .6),
-        0 0 35px rgba(233, 190, 104, .1);
-      isolation: isolate;
+      max-width: 430px;
+      text-align: center;
     }
 
-    /* IMAGEN ORIGINAL */
+    .logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 22px;
+      margin-bottom: 23px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.3);
+    }
 
-    .showcase-image {
-      display: block;
-      width: 100%;
-      height: auto;
+    .tag {
+      display: inline-block;
+      margin-bottom: 13px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .brand {
+      font-size: clamp(27px, 7vw, 36px);
+      font-weight: 800;
+      letter-spacing: -1.3px;
+      line-height: 1.15;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .description {
+      margin: 15px auto 30px;
+      max-width: 330px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .social {
       position: relative;
-      z-index: 1;
-    }
-
-    /* LOGO ACTUALIZADO */
-
-    .brand-logo {
-      position: absolute;
-      z-index: 3;
-      top: 2.5%;
-      left: 49%;
-      width: 47%;
-      height: 20%;
       display: flex;
       align-items: center;
-      justify-content: center;
-      background: linear-gradient(
-        135deg,
-        #151515 0%,
-        #090909 100%
-      );
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,.3);
-    }
-
-    .brand-logo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    /* ZONAS CLICABLES SOBRE LA IMAGEN */
-
-    .social-hotspot {
-      position: absolute;
-      z-index: 5;
-      left: 42%;
-      width: 50.5%;
-      height: 7.3%;
-      border-radius: 50px;
-      cursor: pointer;
-      display: block;
-      outline-offset: 4px;
+      gap: 16px;
+      min-height: 72px;
+      padding: 13px 17px;
+      border: 1px solid #303030;
+      border-radius: 16px;
+      color: white;
+      background: var(--card);
+      text-decoration: none;
+      text-align: left;
       transition:
         transform .25s ease,
-        box-shadow .25s ease,
-        background .25s ease;
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
     }
 
-    .social-hotspot:hover {
-      transform: scale(1.025);
-      background: rgba(255,255,255,.07);
-      box-shadow: inset 0 0 25px rgba(255,255,255,.12);
+    .social:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+      background: #1e1e1e;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
     }
 
-    .social-hotspot:focus-visible {
-      outline: 3px solid var(--gold);
+    .social:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
     }
 
-    .tiktok {
-      top: 35.4%;
-    }
-
-    .facebook {
-      top: 44.1%;
-    }
-
-    .instagram {
-      top: 52.8%;
-    }
-
-    .whatsapp {
-      top: 61.5%;
-    }
-
-    .social-hotspot.cta {
-      top: 82%;
-      left: 43%;
-      width: 49%;
-      height: 7.3%;
-    }
-
-    /* BOTONES ADICIONALES PARA CELULARES */
-
-    .mobile-links {
-      display: none;
-      width: 100%;
-      max-width: 540px;
-      margin: 20px auto 0;
-      padding: 0 3px;
-    }
-
-    .mobile-links h2 {
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-align: center;
-      color: var(--gold);
-      margin-bottom: 18px;
-    }
-
-    .mobile-button {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 60px;
-      gap: 14px;
-      padding: 14px 18px;
-      margin-bottom: 12px;
-      text-decoration: none;
-      color: white;
-      background: #161616;
-      border: 1px solid #333;
-      border-radius: 15px;
-      font-weight: 600;
-      font-size: 15px;
-      transition: .25s ease;
-    }
-
-    .mobile-button:hover {
-      transform: translateY(-2px);
-      background: #222;
-    }
-
-    .mobile-button span {
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
-      gap: 12px;
-    }
-
-    .mobile-button .symbol {
-      font-size: 12px;
-      color: var(--gold);
-    }
-
-    .mobile-button.tiktok-mobile {
-      border-left: 3px solid #25f4ee;
-    }
-
-    .mobile-button.facebook-mobile {
-      border-left: 3px solid #1877f2;
-    }
-
-    .mobile-button.instagram-mobile {
-      border-left: 3px solid #e440a5;
-    }
-
-    .mobile-button.whatsapp-mobile {
-      border-left: 3px solid #25d366;
-    }
-
-    /* FOOTER */
-
-    footer {
-      width: 100%;
-      background: #050505;
-      color: #aaa;
-      padding: 25px 16px;
-      text-align: center;
-      border-top: 1px solid rgba(233,190,104,.2);
-    }
-
-    .footer-inner {
-      display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      border-radius: 13px;
     }
 
-    .footer-inner img {
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-      object-fit: contain;
+    .social-icon svg {
+      width: 23px;
+      height: 23px;
+      fill: white;
     }
 
-    .footer-inner p {
+    .tiktok .social-icon {
+      background: #050505;
+      box-shadow: inset 0 0 0 1px #454545;
+    }
+
+    .facebook .social-icon {
+      background: #1877f2;
+    }
+
+    .instagram .social-icon {
+      background: linear-gradient(
+        135deg,
+        #833ab4,
+        #e1306c,
+        #fd8d32
+      );
+    }
+
+    .whatsapp .social-icon {
+      background: #20c765;
+    }
+
+    .social-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .social-info strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .social-info small {
+      display: block;
+      color: #a9a9a9;
       font-size: 12px;
-      line-height: 1.7;
-      letter-spacing: .2px;
+      line-height: 1.4;
     }
 
-    .footer-inner strong {
-      color: #f3f3f3;
+    .arrow {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      color: var(--gold);
+      background: #262626;
+      font-size: 19px;
+      transition: transform .25s ease;
     }
 
-    .footer-subtitle {
-      margin-top: 8px;
+    .social:hover .arrow {
+      transform: translate(2px, -2px);
+    }
+
+    .bottom-text {
+      margin-top: 28px;
       font-size: 11px;
       color: #777;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
-    /* TABLETS */
+    footer {
+      padding: 23px 15px;
+      text-align: center;
+      border-top: 1px solid #252525;
+      background: #0d0d0d;
+    }
 
-    @media (max-width: 900px) {
+    footer p {
+      color: #989898;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer strong {
+      color: #dedede;
+      font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 17px 12px;
+      }
+
+      header h1 {
+        font-size: 13px;
+        letter-spacing: 2px;
+      }
+
       main {
-        padding: 12px;
+        padding: 28px 17px;
       }
 
-      .showcase {
-        max-width: 700px;
-        border-radius: 18px;
+      .logo {
+        width: 125px;
+        height: 125px;
       }
 
-      .brand-logo {
-        border-radius: 14px;
-      }
-    }
-
-    /* CELULARES */
-
-    @media (max-width: 600px) {
-      main {
-        display: block;
-        padding: 0 0 18px;
+      .description {
+        margin-bottom: 26px;
       }
 
-      .showcase {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 0;
-        box-shadow: none;
+      .social {
+        min-height: 69px;
+        padding: 12px 14px;
+        gap: 13px;
       }
 
-      .brand-logo {
-        border-radius: 9px;
-      }
-
-      .social-hotspot {
-        min-height: 0;
-      }
-
-      .mobile-links {
-        display: block;
-        padding: 0 18px;
-      }
-
-      footer {
-        padding: 23px 16px 28px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .footer-inner img {
-        width: 58px;
-        height: 58px;
+      .social-info small {
+        font-size: 11px;
       }
     }
-
-    /* ACCESIBILIDAD */
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
+      * {
+        transition: none !important;
       }
     }
   </style>
@@ -338,151 +287,132 @@
 
 <body>
 
+  <header>
+    <h1>KEEP STYLE FOR MEN</h1>
+  </header>
+
   <main>
-    <div class="page-content">
+    <div class="container">
 
-      <section class="showcase"
-               aria-label="Keep Style For Men - Tienda virtual">
+      <!-- LOGO ORIGINAL -->
+      <img
+        src="KeepStyle.jpeg"
+        alt="Logo Keep Style"
+        class="logo"
+      >
 
-        <!-- DISEÑO ORIGINAL -->
-        <img
-          src="keepstyle_design.png"
-          alt="Tienda virtual Keep Style For Men"
-          class="showcase-image"
-        >
+      <div class="tag">Tienda virtual de ropa masculina</div>
 
-        <!-- NUEVO LOGO KEEP STYLE -->
-        <div class="brand-logo">
-          <img
-            src="logo-keepstyle.png"
-            alt="Logo oficial Keep Style"
-          >
-        </div>
+      <h2 class="brand">
+        KEEP <span>STYLE</span>
+      </h2>
+
+      <p class="description">
+        Moda masculina para cada ocasión.
+        Descubre nuestros estilos, novedades
+        y colecciones a través de nuestras redes.
+      </p>
+
+      <nav class="links" aria-label="Redes sociales">
 
         <!-- TIKTOK -->
         <a
-          class="social-hotspot tiktok"
+          class="social tiktok"
           href="https://www.tiktok.com/@keepstyle.jz?lang=es"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visitar TikTok de Keep Style"
-          title="TikTok"
-        ></a>
+        >
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16.339 2A5.673 5.673 0 0021.97 7.64v.892a7.57 7.57 0 01-5.63-2.383v6.41a6.36 6.36 0 11-6.36-6.36c.242 0 .48.016.714.047v2.962a3.4 3.4 0 103.4 3.4V2h2.245Z"/>
+            </svg>
+          </div>
+
+          <div class="social-info">
+            <strong>TikTok</strong>
+            <small>Looks, tendencias y novedades</small>
+          </div>
+
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
 
         <!-- FACEBOOK -->
         <a
-          class="social-hotspot facebook"
+          class="social facebook"
           href="https://www.facebook.com/KeepStyle.Jz"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visitar Facebook de Keep Style"
-          title="Facebook"
-        ></a>
+        >
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V11h2.2l-.3 3h-1.9v7A10 10 0 0022 12Z"/>
+            </svg>
+          </div>
+
+          <div class="social-info">
+            <strong>Facebook</strong>
+            <small>Promociones y comunidad</small>
+          </div>
+
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
 
         <!-- INSTAGRAM -->
         <a
-          class="social-hotspot instagram"
+          class="social instagram"
           href="https://www.instagram.com/keepstyle.jz/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visitar Instagram de Keep Style"
-          title="Instagram"
-        ></a>
+        >
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.5-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+            </svg>
+          </div>
+
+          <div class="social-info">
+            <strong>Instagram</strong>
+            <small>Catálogo, outfits y estilo</small>
+          </div>
+
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
 
         <!-- WHATSAPP -->
         <a
-          class="social-hotspot whatsapp"
-          href="https://wa.me/51907564511"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Contactar a Keep Style por WhatsApp"
-          title="WhatsApp"
-        ></a>
-
-        <!-- BOTÓN DORADO -->
-        <a
-          class="social-hotspot cta"
-          href="https://www.instagram.com/keepstyle.jz/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Explorar las redes de Keep Style"
-          title="Explorar nuestras redes"
-        ></a>
-
-      </section>
-
-      <!-- ACCESOS OPTIMIZADOS PARA CELULAR -->
-
-      <nav class="mobile-links"
-           aria-label="Redes sociales Keep Style">
-
-        <h2>Conecta con nuestro estilo</h2>
-
-        <a
-          class="mobile-button tiktok-mobile"
-          href="https://www.tiktok.com/@keepstyle.jz?lang=es"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>TikTok</span>
-          <span class="symbol">↗</span>
-        </a>
-
-        <a
-          class="mobile-button facebook-mobile"
-          href="https://www.facebook.com/KeepStyle.Jz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>Facebook</span>
-          <span class="symbol">↗</span>
-        </a>
-
-        <a
-          class="mobile-button instagram-mobile"
-          href="https://www.instagram.com/keepstyle.jz/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>Instagram</span>
-          <span class="symbol">↗</span>
-        </a>
-
-        <a
-          class="mobile-button whatsapp-mobile"
+          class="social whatsapp"
           href="https://wa.me/51907564511"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>WhatsApp</span>
-          <span class="symbol">↗</span>
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.04 2.003a9.956 9.956 0 00-8.511 14.998l-1.2 4.39 4.518-1.184a9.956 9.956 0 004.193.96c5.519 0 10-4.486 10-10.004s-4.481-10.004-10-10.004Zm0 18.015c-1.28 0-2.53-.31-3.648-.898l-.26-.14-2.681.703.709-2.614-.17-.27a7.97 7.97 0 01-1.25-4.267c0-4.41 3.586-7.998 7.999-7.998 4.414 0 7.999 3.588 7.999 7.998s-3.585 7.998-7.999 7.998Zm4.364-5.84c-.238-.119-1.41-.695-1.63-.773-.218-.078-.378-.119-.537.119-.16.238-.617.773-.757.933-.139.16-.278.179-.516.06-.238-.12-1.006-.37-1.917-1.18-.708-.63-1.187-1.407-1.327-1.645-.14-.239-.015-.368.104-.487.107-.107.238-.278.357-.417.12-.14.16-.239.239-.398.079-.159.04-.298-.02-.417-.06-.119-.537-1.297-.735-1.777-.194-.468-.39-.405-.536-.413l-.456-.007c-.159 0-.417.06-.636.298s-.835.816-.835 1.99.855 2.312.974 2.47c.119.159 1.68 2.56 4.07 3.59.57.246 1.014.393 1.36.502.572.183 1.092.157 1.503.095.458-.068 1.41-.577 1.608-1.134.199-.557.199-1.034.14-1.134-.06-.1-.218-.159-.456-.278Z"/>
+            </svg>
+          </div>
+
+          <div class="social-info">
+            <strong>WhatsApp</strong>
+            <small>Consultas, tallas y pedidos</small>
+          </div>
+
+          <span class="arrow" aria-hidden="true">↗</span>
         </a>
 
       </nav>
 
-    </div>
-  </main>
-
-  <!-- COPYRIGHT -->
-
-  <footer>
-    <div class="footer-inner">
-
-      <img
-        src="logo-keepstyle.png"
-        alt="Keep Style"
-      >
-
-      <p>
-        Copyright © <span id="year"></span>
-        <strong>Keep Style For Men.</strong>
-        Todos los derechos reservados.
+      <p class="bottom-text">
+        Viste tu esencia. Define tu estilo.
       </p>
 
     </div>
+  </main>
 
-    <p class="footer-subtitle">
-      Moda masculina · Estilo que te representa
+  <footer>
+    <p>
+      Copyright © <span id="year"></span>
+      <strong>Keep Style For Men.</strong>
+      Todos los derechos reservados.
     </p>
   </footer>
 
@@ -493,4 +423,5 @@
 
 </body>
 </html>
+
 
